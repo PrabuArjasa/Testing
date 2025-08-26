@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Anggota Kelompok 6</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #5d5dff;
+            --secondary-color: #ff6e8a;
+            --background-dark: #0f0a28;
+            --card-bg-color: rgba(255, 255, 255, 0.05);
+            --text-color-light: #f0f0f0;
+            --text-color-faded: #b0b0b0;
+            --border-glow: #8e2de2;
+        }
+
+        /* Latar belakang galaksi */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at top left, #1a0f3d, #0f0a28);
+            color: var(--text-color-light);
+            line-height: 1.6;
+            animation: background-pan 30s ease-in-out infinite;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Efek bintang */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('foto 8.jpg'); /* Ganti dengan gambar bintang yang Anda inginkan */
+            background-repeat: repeat;
+            background-size: cover;
+            opacity: 0.8;
+            z-index: -1;
+        }
+        
+        @keyframes background-pan {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header */
+        .main-header {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 0 0 10px var(--border-glow);
+            animation: text-glow 2s infinite alternate;
+        }
+
+        .main-header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--text-color-faded);
+        }
+
+        @keyframes text-glow {
+            from { text-shadow: 0 0 5px var(--border-glow); }
+            to { text-shadow: 0 0 20px var(--border-glow); }
+        }
+
+        /* Kontainer Profil */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* Kartu Profil */
+        .profile-card {
+            background-color: var(--card-bg-color);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-photo-wrapper {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 0 15px var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-card:hover .profile-photo {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--secondary-color);
+        }
+
+        .profile-card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-color-light);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-card .role {
+            font-style: italic;
+            color: var(--text-color-faded);
+            margin: 0;
+            font-weight: 300;
+        }
+
+        /* Tombol */
+        .cta-button {
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        .main-footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: var(--text-color-faded);
+            margin-top: 3rem;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        /* Media Queries untuk ukuran teks/foto */
+        @media screen and (max-width: 768px) {
+            .main-header h1 { font-size: 2.2rem; }
+            .main-header p { font-size: 1rem; }
+            .profile-card { padding: 1.5rem; }
+            .profile-photo-wrapper { width: 120px; height: 120px; }
+            .profile-card h2 { font-size: 1.3rem; }
+            .profile-card .role { font-size: 0.9rem; }
+        }
+
+        @media screen and (max-width: 480px) {
+            .main-header { padding: 3rem 1rem 1.5rem; }
+            .main-header h1 { font-size: 1.8rem; }
+            .main-header p { font-size: 0.9rem; }
+            .profile-card { padding: 1rem; }
+            .profile-photo-wrapper { width: 100px; height: 100px; }
+            .cta-button { padding: 0.6rem 1.5rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>PORTOFOLIO KELOMPOK 6</h1>
+        <p>Kelas XII TKJ 1 - SMK AN-NURMANNIYAH</p>
+    </header>
+
+    <main class="container">
+        <div class="profile-card">
+            <div class="profile-photo-wrapper">
+                <img src="foto 1.webp" alt="Foto Profil Prabu Arjasa" class="profile-photo">
+            </div>
+            <h2>Prabu Arjasa</h2>
+            <p class="role">XII TKJ 1</p>
+            <p>Saya adalah seorang pelajar yang memiliki minat di bidang pemrograman web. Hobi saya adalah membaca buku dan bermain game.</p>
+            <a href="333.html" class="cta-button">Selengkapnya</a>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-photo-wrapper">
+                <img src="foto 5.jpg" alt="Foto Profil Farrel Rizatys" class="profile-photo">
+            </div>
+            <h2>Farrel Rizatyas</h2>
+            <p class="role">XII TKJ 1</p>
+            <p>Saya senang belajar hal baru, terutama dalam teknologi. Saya berharap bisa menciptakan dan merancang aplikasi yang handal di masa depan.</p>
+            <a href="portoproto.html" class="cta-button">Selengkapnya</a>
+        </div>
+        
+        <div class="profile-card">
+            <div class="profile-photo-wrapper">
+                <img src="foto 4.jpg" alt="Foto Profil M. Agil Ramadhan" class="profile-photo">
+            </div>
+            <h2>M. Agil Ramadhan</h2>
+            <p class="role">XII TKJ 1</p>
+            <p>Saya tertarik pada UI/UX Design. Saya percaya desain yang baik adalah kunci untuk pengalaman pengguna yang menyenangkan.</p>
+            <a href="#" class="cta-button">Selengkapnya</a>
+        </div>
+        
+        <div class="profile-card">
+            <div class="profile-photo-wrapper">
+                <img src="foto 2.jpg" alt="Foto Profil M. Fajri Ilhami" class="profile-photo">
+            </div>
+            <h2>M. Fajri Ilhami</h2>
+            <p class="role">XII TKJ 1</p>
+            <p>Saya adalah seorang pelajar yang bersemangat untuk memecahkan masalah dengan kode. Hobi saya adalah bermain game dan mendengarkan musik.</p>
+            <a href="portofolio fajri.html" class="cta-button">Selengkapnya</a>
+        </div>
+        
+        <div class="profile-card">
+            <div class="profile-photo-wrapper">
+                <img src="foto 3.jpg" alt="Foto Profil Fariz Zaidan" class="profile-photo">
+            </div>
+            <h2>Fariz Zaidan</h2>
+            <p class="role">XII TKJ 1</p>
+            <p>Saya menyukai data dan analisis. Saya percaya data dapat membantu kita membuat keputusan yang lebih baik.</p>
+            <a href="#" class="cta-button">Selengkapnya</a>
+        </div>
+        
+    </main>
+
+    <footer class="main-footer">
+        <h3>Tentang Kami</h3>
+        <p>Kami adalah sekelompok siswa dari SMK AN-NURMANNIYAH kelas XII TKJ 1 yang bersatu karena semangat yang sama dalam dunia teknologi.</p>
+        <p>&copy; 2025 Kelompok 6. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+:root {
+    --primary-color: #5d5dff;
+    --secondary-color: #ff6e8a;
+    --background-dark: #0f0a28;
+    --card-bg-color: rgba(255, 255, 255, 0.05);
+    --text-color-light: #f0f0f0;
+    --text-color-faded: #b0b0b0;
+    --border-glow: #8e2de2;
+}
+
+/* Latar belakang galaksi */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top left, #1a0f3d, #0f0a28);
+    color: var(--text-color-light);
+    line-height: 1.6;
+    animation: background-pan 30s ease-in-out infinite;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efek bintang */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('foto 8.jpg');
+    background-repeat: repeat;
+    background-size: 100% 100%;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+@keyframes background-pan {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    padding: 4rem 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.main-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px var(--border-glow);
+    animation: text-glow 2s infinite alternate;
+}
+
+.main-header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--text-color-faded);
+}
+
+@keyframes text-glow {
+    from { text-shadow: 0 0 5px var(--border-glow); }
+    to { text-shadow: 0 0 20px var(--border-glow); }
+}
+
+/* Kontainer Profil */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex; /* Menggunakan flexbox */
+    flex-direction: column; /* Mengatur item berbaris ke bawah */
+    align-items: center; /* Memposisikan item di tengah secara horizontal */
+    gap: 2rem;
+}
+
+/* Kartu Profil */
+.profile-card {
+    background-color: var(--card-bg-color);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Lebar penuh dalam container */
+    max-width: 400px; /* Batasi lebar maksimum agar tidak terlalu besar di desktop */
+}
+
+.profile-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-photo-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1.5rem;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover .profile-photo {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--secondary-color);
+}
+
+.profile-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color-light);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.profile-card .role {
+    font-style: italic;
+    color: var(--text-color-faded);
+    margin: 0;
+    font-weight: 300;
+}
+
+/* Tombol */
+.cta-button {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--text-color-faded);
+    margin-top: 3rem;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2.2rem;
+    }
+    .main-header p {
+        font-size: 1rem;
+    }
+    .profile-card {
+        padding: 1.5rem;
+    }
+    .profile-photo-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+    .profile-card h2 {
+        font-size: 1.3rem;
+    }
+    .profile-card .role {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-header {
+        padding: 3rem 1rem 1.5rem;
+    }
+    .main-header h1 {
+        font-size: 1.8rem;
+    }
+    .main-header p {
+        font-size: 0.9rem;
+    }
+    .profile-card {
+        padding: 1rem;
+    }
+    .profile-photo-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+    .cta-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
